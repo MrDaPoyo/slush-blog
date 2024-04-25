@@ -20,3 +20,10 @@ def home(request):
             thread.content = form.cleaned_data["content"]
             thread.save()
     return render(request, "index.html", context)
+
+def view(request, id):
+    Post = post.objects.get(pk=id)
+    context = {
+        "post":Post,
+    }
+    return render(request, "view.html", context)

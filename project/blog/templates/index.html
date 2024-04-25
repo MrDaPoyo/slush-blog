@@ -13,14 +13,14 @@
     {% if user.is_authenticated %}
     <form method="POST" action="{% url 'logout' %}" class="p-0 m-0">
       {% csrf_token %}
-      <button class="btn btn-outline-primary mx-2" type="submit">Logout</button>
+      <button class="btn btn-outline-dark mx-2" type="submit">Logout</button>
     </form>
     {% else %}
-    <a href="{% url 'login' %}"><button class="btn btn-outline-primary mx-2">Login</button></a>
+    <a href="{% url 'login' %}"><button class="btn btn-outline-dark mx-2">Login</button></a>
     {% endif %}
     <form class="form-inline my-2 my-lg-0 d-flex flex-row">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0 mx-1" type="submit">Search</button>
+      <button class="btn btn-outline-secondary my-2 my-sm-0 mx-1" type="submit">Search</button>
     </form>
   </div>
 </nav>
@@ -40,7 +40,7 @@
         {% endfor %}
     </div>
     <div class="card w-50 m-1 p-2">
-        <iframe class ="h-100" src="https://wikipedia.org"></iframe>
+        <iframe class ="h-100" src="view/1"></iframe>
     </div>
 </div>
 
