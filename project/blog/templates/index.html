@@ -4,8 +4,9 @@
 {% block content %}
 <div class="d-flex flex-row h-100">
     <div class="card p-3 w-50">
-        <h1>Blog</h1>
+        <h1>Letter List</h1>
         {% if user.is_staff %}
+        <p>Hi there, {{ request.user }}.</p>
         <form method="post" class="w-100">
             {% csrf_token %}
             {{ form|crispy }}
@@ -18,10 +19,11 @@
             <h2>{{ post.title }}</h2>
             <p>{{ post.content }}</p>
         </div>
+        {% endfor %}
     </div>
     <div class="card w-50 bg-dark">
         <iframe class ="h-100" src="https://wikipedia.org"></iframe>
     </div>
 </div>
-{% endfor %}
+
 {% endblock content %}
