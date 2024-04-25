@@ -1,10 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from .models import post
 from .forms import postForm
 
 # Create your views here.
-def home(request, id):
+def home(request, id=1):
     form = postForm
     Post = post.objects.get(pk=id)
     context = {
@@ -29,3 +29,6 @@ def view(request, id):
         "post":Post,
     }
     return render(request, "view.html", context)
+
+def homeRedirect(request):
+    return redirect("../home/1")
