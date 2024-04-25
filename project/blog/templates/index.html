@@ -36,11 +36,15 @@
         </form>
         {% endif %}
         {% for post in posts %}
-            <h4>- <a href="view/{{ post.id }}">{{ post.author }}: {{ post.title }}</a></h4>
+            <h4>- <a href="../home/{{ post.id }}">{{ post.author }}: {{ post.title }}</a></h4>
         {% endfor %}
     </div>
     <div class="card w-50 m-1 p-2">
-        <iframe class ="h-100" src="view/1"></iframe>
+        {% if post %}
+        <iframe class ="h-100" src="../view/{{post.id}}"></iframe>
+        {% else %}
+        <iframe class ="h-100" src="../view/1"></iframe>
+        {% endif %}
     </div>
 </div>
 

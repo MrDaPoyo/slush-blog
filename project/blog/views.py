@@ -4,11 +4,13 @@ from .models import post
 from .forms import postForm
 
 # Create your views here.
-def home(request):
+def home(request, id):
     form = postForm
+    Post = post.objects.get(pk=id)
     context = {
         "posts":post.objects.all(),
-        "form":form
+        "form":form,
+        "post":Post,
     }
     form = postForm()
     if request.method == "POST":
