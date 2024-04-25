@@ -7,14 +7,16 @@ from .forms import postForm
 def home(request):
     form = postForm
     context = {
-        "posts" : post.objects.all(),
-        "form": form
+        "posts":post.objects.all(),
+        "form":form
     }
+    form = postForm()
     if request.method == "POST":
-        if form.is_valid :
-            form = postForm(request.POST)
-            form.user = request.user
-            form.title = request.POST.get('title')
-            form.content = request.POST.get('content')
-            form.save()
+        form = postForm(request.POST)
+        if form.is_valid():
+            thread = form.save(commit=False)
+            thread.author = request.user
+            thread.title = form.cleaned_data["title"]
+            thread.content = form.cleaned_data["content"]
+            thread.save()
     return render(request, "index.html", context)
