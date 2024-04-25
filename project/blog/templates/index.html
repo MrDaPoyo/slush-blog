@@ -2,8 +2,21 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-<div class="d-flex flex-row h-100">
-    <div class="card p-3 w-50">
+<nav class="navbar navbar-expand-lg navbar-light bg-light px-2">
+  <a class="navbar-brand" href="#">Letter List</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="w-100"></div>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <form class="form-inline my-2 my-lg-0 d-flex flex-row">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+<div class="d-flex flex-row h-75">
+    <div class="p-2 m-1 w-50">
         <h1>Letter List</h1>
         {% if user.is_staff %}
         <p>Hi there, {{ request.user }}.</p>
@@ -14,14 +27,14 @@
         </form>
         {% endif %}
         {% for post in posts %}
-        <div class="card p-3">
+        <div class="card p-3 mt-1 mm-1">
             <h3>{{ post.author }}</h3>
             <h2>{{ post.title }}</h2>
             <p>{{ post.content }}</p>
         </div>
         {% endfor %}
     </div>
-    <div class="card w-50 bg-dark">
+    <div class="card w-50 m-1">
         <iframe class ="h-100" src="https://wikipedia.org"></iframe>
     </div>
 </div>
