@@ -2,7 +2,7 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-<nav class="navbar navbar-expand-lg navbar-light bg-light px-2">
+<nav class="navbar navbar-expand-lg navbar-light bg-light px-2 border-bottom border-dark border-2">
   <a class="navbar-brand" href="#">Letter List</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -24,8 +24,8 @@
     </form>
   </div>
 </nav>
-<div class="d-flex flex-row">
-    <div class="card p-2 m-1 w-50">
+<div class="d-flex flex-row h-75">
+    <div class="card p-2 m-1 w-50 h-100" style="overflow: scroll;">
         <h1>Posts</h1>
         {% if user.is_staff %}
         <p>Hi there, {{ request.user }}.</p>
@@ -36,12 +36,10 @@
         </form>
         {% endif %}
         {% for post in posts %}
-        <div class="card p-3 h-25 mt-1 mm-1">
-            <h4>- <a>{{ post.author }}: {{ post.title }}</a></h4>
-        </div>
+            <h4>- <a href="view/{{ post.id }}">{{ post.author }}: {{ post.title }}</a></h4>
         {% endfor %}
     </div>
-    <div class="card w-50 m-1">
+    <div class="card w-50 m-1 p-2">
         <iframe class ="h-100" src="https://wikipedia.org"></iframe>
     </div>
 </div>
