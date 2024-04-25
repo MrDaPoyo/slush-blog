@@ -5,10 +5,13 @@
 <div class="d-flex flex-row h-100">
     <div class="card p-3 w-50">
         <h1>Blog</h1>
-        <form method="post">
+        {% if user.is_staff %}
+        <form method="post" class="w-100">
+            {% csrf_token %}
             {{ form|crispy }}
             <button class="btn btn-primary" type="submit">Submit</button>
         </form>
+        {% endif %}
         {% for post in posts %}
         <div class="card p-3">
             <h3>{{ post.author }}</h3>
