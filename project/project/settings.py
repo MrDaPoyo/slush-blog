@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-4x*2b2mofux7j!l#d7%7*4$8ceqtv&p@90@s$f&yb&w^9-k4es
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     # Custom Apps
     "blog",
     "registrar",
+    'crispy_forms', # add this
+    'crispy_bootstrap5', # add this
 ]
 
 MIDDLEWARE = [
@@ -120,8 +122,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = "static/"
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+

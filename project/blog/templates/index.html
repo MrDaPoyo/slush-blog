@@ -1,10 +1,24 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 
 {% block content %}
-<h1>Blog</h1>
-{% for post in posts %}
-<h3>{{ post.author }}</h3>
-<h2>{{ post.title }}</h2>
-<p>{{ post.content }}</p>
+<div class="d-flex flex-row h-100">
+    <div class="card p-3 w-50">
+        <h1>Blog</h1>
+        <form method="post">
+            {{ form|crispy }}
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </form>
+        {% for post in posts %}
+        <div class="card p-3">
+            <h3>{{ post.author }}</h3>
+            <h2>{{ post.title }}</h2>
+            <p>{{ post.content }}</p>
+        </div>
+    </div>
+    <div class="card w-50 bg-dark">
+        <iframe class ="h-100" src="https://wikipedia.org"></iframe>
+    </div>
+</div>
 {% endfor %}
 {% endblock content %}
