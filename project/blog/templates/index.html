@@ -2,14 +2,11 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-<nav class="navbar text-white navbar-expand-lg navbar-dark bg-dark px-2">
+<nav id="nav" class="bg-dark px-2 py-1">
   <a class="navbar-brand text-white" href="#">Letter List</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
   <div class="w-100"></div>
   
-  <div class="collapse navbar-collapse text-white" id="navbarSupportedContent">
+  <div class="text-white" id="navbarSupportedContent">
     {% if user.is_authenticated %}
     <form method="POST" action="{% url 'logout' %}" class="p-0 m-0">
       {% csrf_token %}
