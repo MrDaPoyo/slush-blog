@@ -25,6 +25,8 @@ def home(request, id=1):
 
 def view(request, id):
     Post = post.objects.get(pk=id)
+    if Exception:
+        Post = post.objects.get(pk=1)
     context = {
         "post":Post,
     }
