@@ -6,7 +6,7 @@ from .forms import postForm
 # Create your views here.
 def home(request, id=1):
     form = postForm
-    post.objects.get(pk=id)
+    Post = post.objects.get(pk=id)
     context = {
         "posts":post.objects.all(),
         "form":form,
