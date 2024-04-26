@@ -9,7 +9,7 @@
   </button>
   <div class="w-75"></div>
   
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <div class="collapse navbar-collapse text-white" id="navbarSupportedContent">
     {% if user.is_authenticated %}
     <form method="POST" action="{% url 'logout' %}" class="p-0 m-0">
       {% csrf_token %}
@@ -22,12 +22,12 @@
     </form>
   </div>
 </nav>
-<div class="d-flex flex-row h-100">
-    <div class="card p-2 m-1 w-50 h-100" style="overflow: scroll;">
+<div class="d-flex flex-row h-100 text-white">
+    <div class=" p-2 m-1 w-50 h-100" style="overflow: scroll;">
         <h1>Posts</h1>
         {% if user.is_staff %}
         <p>Hi there, {{ request.user }}.</p>
-        <form method="post" class="card w-100 p-3 w-50">
+        <form method="post" class="border w-100 p-3 w-50 text-white">
             {% csrf_token %}
             {{ form|crispy }}
             <button class="btn btn-primary" type="submit">Submit</button>
@@ -37,7 +37,7 @@
             <h4>--<a href="../home/{{ post.id }}">{{ post.author }}: {{ post.title }}</a></h4>
         {% endfor %}
     </div>
-    <div class="card w-50 m-1 p-2 h-100">
+    <div class="card w-50 m-1 h-100">
         {% if post %}
         <iframe class ="h-100" src="../view/{{post.id}}"></iframe>
         {% else %}
