@@ -15,8 +15,6 @@
       {% csrf_token %}
       <button class="btn btn-outline-dark mx-2" type="submit">Logout</button>
     </form>
-    {% else %}
-    <a href="{% url 'login' %}"><button class="btn btn-outline-dark mx-2">Login</button></a>
     {% endif %}
     <form class="form-inline my-2 my-lg-0 d-flex flex-row">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -29,14 +27,14 @@
         <h1>Posts</h1>
         {% if user.is_staff %}
         <p>Hi there, {{ request.user }}.</p>
-        <form method="post" class="w-100">
+        <form method="post" class="card w-100 p-3 w-50">
             {% csrf_token %}
             {{ form|crispy }}
             <button class="btn btn-primary" type="submit">Submit</button>
         </form>
         {% endif %}
         {% for post in posts %}
-            <h4>- <a href="../home/{{ post.id }}">{{ post.author }}: {{ post.title }}</a></h4>
+            <h4>--<a href="../home/{{ post.id }}">{{ post.author }}: {{ post.title }}</a></h4>
         {% endfor %}
     </div>
     <div class="card w-50 m-1 p-2 h-100">
