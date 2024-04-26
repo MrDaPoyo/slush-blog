@@ -2,7 +2,7 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-<nav class="navbar text-white navbar-expand-lg navbar-dark bg-dark px-2 border-bottom border-dark border-2">
+<nav class="navbar text-white navbar-expand-lg navbar-dark bg-dark px-2">
   <a class="navbar-brand text-white" href="#">Letter List</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -18,12 +18,12 @@
     {% endif %}
   </div>
 </nav>
-<div class="d-flex flex-row h-100 text-white">
+<div class="d-flex flex-row h-100 border">
     <div class=" p-2 m-1 w-50 h-100" style="overflow: scroll;">
         <h1>Posts</h1>
         {% if user.is_staff %}
         <p>Hi there, {{ request.user }}.</p>
-        <form method="post" class="border w-100 p-3 w-50 text-white">
+        <form method="post" class="border w-100 p-3 w-50">
             {% csrf_token %}
             {{ form|crispy }}
             <button class="btn btn-secondary" type="submit">Submit</button>
@@ -33,7 +33,7 @@
             <h4>--<a href="../home/{{ post.id }}">{{ post.author }}: {{ post.title }}</a></h4>
         {% endfor %}
     </div>
-    <div class="card w-50 m-1 h-100">
+    <div class="card w-50 m-1 h-100 border">
         {% if post %}
         <iframe class ="h-100" src="../view/{{post.id}}"></iframe>
         {% else %}
