@@ -27,7 +27,7 @@
         </form>
         {% endif %}
         {% for post in posts %}
-            <h4>--<a href="../home/{{ post.id }}">{{ post.author }}: {{ post.title }}</a></h4>
+            <div class="d-flex flex-row"><h4>-- <a href="../home/{{ post.id }}">{{ post.author }}: <strong>{{ post.title }}</strong></a></h4>   <p>< {{ post.created_at }} ></p></div>
         {% endfor %}
     </div>
     <div class="card w-50 m-1 h-100 border">
