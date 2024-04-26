@@ -15,7 +15,7 @@
     {% endif %}
   </div>
 </nav>
-<div class="d-flex flex-row h-100 border">
+<div class="d-flex flex-row h-100 border-end border-3 border-dark">
     <div class=" p-2 m-1 w-50 h-100" style="overflow: scroll;">
         <h1>Posts</h1>
         {% if user.is_staff %}
@@ -27,10 +27,10 @@
         </form>
         {% endif %}
         {% for post in posts %}
-            <div class="d-flex flex-row"><h4>-- <a href="../home/{{ post.id }}">{{ post.author }}: <strong>{{ post.title }}</strong></a></h4>   <p>< {{ post.created_at }} ></p></div>
+            <div class="d-flex flex-row"><h4>-- <a href="../home/{{ post.id }}">{{ post.author }}: <strong>{{ post.title }}</strong></a></h4><p class="p-0 m-1">< {{ post.created_at }} ></p></div>
         {% endfor %}
     </div>
-    <div class="card w-50 m-1 h-100 border">
+    <div class="w-50 m-1 h-100 border-start border-3 border-dark">
         {% if post %}
         <iframe class ="h-100" src="../view/{{post.id}}"></iframe>
         {% else %}
