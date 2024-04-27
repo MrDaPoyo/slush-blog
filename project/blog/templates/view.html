@@ -1,9 +1,11 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container p-3 m-0">
+<body>
+<div class="p-3 w-100">
     <h1>{{ post.title }}</h1>
-    <h2>By {{ post.author }}.</h2>
+    <h5>Created at {{ post.created_at }}</h5>
     <p>{{ post.content }}</p>
 </div>
+</body>
 {% endblock content %}
