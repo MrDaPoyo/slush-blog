@@ -135,4 +135,4 @@ LOGOUT_REDIRECT_URL = "/"
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-CSRF_TRUSTED_ORIGINS = ["https://github.dev", "https://127.0.0.1", "https://0.0.0.0"]
+CSRF_TRUSTED_ORIGINS = ["https://github.dev", "https://127.0.0.1", "https://0.0.0.0", "https://onrender.com"]
