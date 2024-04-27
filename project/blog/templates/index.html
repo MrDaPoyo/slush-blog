@@ -27,7 +27,7 @@
         </form>
         {% endif %}
         {% for post in posts %}
-            <div class="d-flex flex-row"><h4>-- <a href="../home/{{ post.id }}">{{ post.author }}: <strong>{{ post.title }}</strong></a></h4><p class="p-0 m-1">< {{ post.created_at }} ></p></div>
+            <div class="d-flex flex-row"><h4>-- <a href="../home/{{ post.id }}"><strong>{{ post.title }}</strong></a></h4><p class="p-0 m-1 text-success">< {{ post.author }} ></p></div>
         {% endfor %}
     </div>
     <div class="w-50 m-1 h-100 border-start border-3 border-dark">
