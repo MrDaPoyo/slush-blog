@@ -2,15 +2,15 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-<nav id="nav" class="bg-dark px-2 py-1">
+<nav id="nav" class="bg-dark px-2 py-1 inline d-flex flex-row">
   <a class="navbar-brand text-white" href="#">Letter List</a>
   <div class="w-100"></div>
   
   <div class="text-white" id="navbarSupportedContent">
     {% if user.is_authenticated %}
-    <form method="POST" action="{% url 'logout' %}" class="p-0 m-0">
+    <form method="POST" action="{% url 'logout' %}" class="w-25 h-100">
       {% csrf_token %}
-      <button class="btn btn-outline-light mx-2 p-1" type="submit">Logout</button>
+      <button class="btn btn-outline-light h-100 p-0 px-1 rounded" type="submit">Logout</button>
     </form>
     {% endif %}
   </div>
