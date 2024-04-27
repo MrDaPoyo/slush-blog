@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-4x*2b2mofux7j!l#d7%7*4$8ceqtv&p@90@s$f&yb&w^9-k4es"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -135,4 +135,4 @@ LOGOUT_REDIRECT_URL = "/"
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-CSRF_TRUSTED_ORIGINS = ["https://github.dev", "https://127.0.0.1", "https://0.0.0.0", "https://onrender.com"]
+CSRF_TRUSTED_ORIGINS = ["https://localhost", "http://localhost:8000" "https://github.dev", "https://127.0.0.1", "https://0.0.0.0", "https://onrender.com"]
