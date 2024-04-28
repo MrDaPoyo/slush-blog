@@ -3,7 +3,7 @@
 
 {% block content %}
 <div class="d-flex h-100 my-auto mx-auto" style="height: 100vh;">
-  <form method="post" class="container">
+  <form method="POST" class="container">
     <h2>Log In</h2>
     {% csrf_token %}
     {{ form|crispy }}
