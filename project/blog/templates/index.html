@@ -4,9 +4,10 @@
 {% block content %}
 <nav id="nav" class="bg-dark px-2 py-1 inline d-flex flex-row">
   <a class="navbar-brand text-white" href="#">Letter List</a>
-  <div class="w-100"></div>
-  
+  <span id="separator"></span>
+  <a href="letterlista@aol.com" id="mail" class="text-white mx-2">Email Me!</a>
   <div class="text-white" id="navbarSupportedContent">
+  
     {% if user.is_authenticated %}
     <form method="POST" action="{% url 'logout' %}" class="w-25 h-100">
       {% csrf_token %}
