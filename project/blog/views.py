@@ -8,7 +8,7 @@ def home(request, id=1):
     form = postForm
     Post = post.objects.get(pk=id)
     context = {
-        "posts":post.objects.all(),
+        "posts":post.objects.all().order_by('-id'),
         "form":form,
         "post":Post,
     }
