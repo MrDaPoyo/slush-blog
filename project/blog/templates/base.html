@@ -8,9 +8,20 @@
         src: url('https://dl.dropbox.com/scl/fi/8ugzz6zaemclw1q54b4d3/HelveticaNeueMedium.otf?rlkey=f0lud3dmfpntfb9gpu2povkqa&st=2qsxbe76&ampdl=0');
     }
     
+    #view {
+        border-right:double;
+    }
+
+    #vertical-border {
+        width: 0;
+        height: 100%;
+        border-style:double;
+        border-width: 0.5vh;
+    }
+
     body {
         color: black;
-        background-color: #eee;
+        background-color: aliceblue;
         font-family: "Helvetica Neue", "Jersey 10", sans-serif;
         font-size: xx-large;
     }
@@ -24,13 +35,13 @@
     }
     #mail {
         font-size: 3vh;
-        height: 5vh;
+        height: 3vh;
         width: fit-content;
-        text-justify:left ;
+        min-width: fit-content;
     }
 
     #separator {
-        width: 80%;
+        width: 90%;
         color: white;
         padding:0;
         margin:0;
@@ -45,6 +56,8 @@
         height: 5vh;
         background-color: aliceblue;
         color: black;
+        border-bottom-style: double;
+        border-color: black;
     }
     #button {
         font-size: 3vh;
