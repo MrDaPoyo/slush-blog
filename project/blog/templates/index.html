@@ -2,10 +2,10 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-<nav id="nav" class="bg-dark px-2 py-1 inline d-flex flex-row">
-  <a class="navbar-brand text-white" href="#">Letter List</a>
+<nav id="nav" class="bg-light px-2 py-1 inline d-flex flex-row">
+  <a class="navbar-brand" href="#">Letter List</a>
   <div id="separator"></div>
-  <a href="letterlista@aol.com" id="mail" class="text-white mx-2">Email Me!</a>
+  <a href="letterlista@aol.com" id="mail" class="mx-2">Email Me!</a>
   <div class="text-white" id="navbarSupportedContent">
   
     {% if user.is_authenticated %}
