@@ -9,7 +9,7 @@
   <div class="text-white" id="navbarSupportedContent">
   
     {% if user.is_authenticated %}
-    <form method="POST" action="{% url 'logout' %}" class="w-25 h-100">
+    <form method="POST" id="smol" action="{% url 'logout' %}" class="w-25 h-100">
       {% csrf_token %}
       <button id="button" type="submit">Logout</button>
     </form>
@@ -21,7 +21,7 @@
         <h1>Posts</h1>
         {% if user.is_staff %}
         <p>Hi there, {{ request.user }}.</p>
-        <form method="post" class="border w-100 p-3 w-50">
+        <form method="post" class="border p-3">
             {% csrf_token %}
             {{ form|crispy }}
             <button class="btn btn-secondary" type="submit">Submit</button>
@@ -30,7 +30,7 @@
         {% for post in posts %}
             <div class="d-flex flex-row flex-inline">
               <h4>-- <a href="../home/{{ post.id }}">{{ post.title }}</a></h4>
-              <p class="text-success px-2" id="smol">< {{ post.author }} ></p></div>
+              <h4 class="text-success px-2">< {{ post.author }} ></h4></div>
         {% endfor %}
     </div>
     <div class="w-50 m-1 h-100 border-start border-3 border-dark">
