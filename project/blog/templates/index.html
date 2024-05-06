@@ -32,9 +32,7 @@
               <h4>-- <a href="../home/{{ post.id }}">{{ post.title }}</a></h4>
               <h4 class="text-success px-2">< {{ post.author }} ></h4>
               {% if user.is_staff %}
-              <form method="post" action="../../delete_post/{{post.id}}">
-                <button class="btn btn-danger" type="submit" name="delete_post">Delete</button>
-              </form>
+                <a href="../delete_post/{{post.id}}" class="underline text-white"><button class="btn btn-danger" type="submit" name="delete_post">Delete</button></a>
               {% endif %}
             </div>
         {% endfor %}
