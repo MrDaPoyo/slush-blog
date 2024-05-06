@@ -34,11 +34,15 @@
         {% endfor %}
     </div>
     <div id="vertical-border"></div>
-    <div class="w-50 m-1 h-100" id="view">
+    <div class="p-2 w-50 h-100" id="view">
         {% if post %}
-        <iframe class ="h-100 w-100" src="../view/{{post.id}}"></iframe>
+          <h1>{{ post.title }}</h1>
+          <h5>Created at {{ post.created_at }}</h5>
+          <p>{{ post.content }}</p>
         {% else %}
-        <iframe class ="h-100 w-100" src="../view/1"></iframe>
+          <h1>{{ post.title }}</h1>
+          <h5>Created at {{ post.created_at }}</h5>
+          <p>{{ post.content }}</p>
         {% endif %}
     </div>
 </div>
